@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action ="#"
+      th:action="@{/processsnack}"
+      th:object="${snack}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    Item:<input type="text" th:field="*{item}" />
+    <span th:if="${#fields.hasErrors('item')}"
+          th:errors="*{item}"></span><br />
+
+    Quantity:<input type="text" th:field="*{qty}" />
+    <span th:if="${#fields.hasErrors('qty')}"
+          th:errors="*{qty}"></span><br />
+
+    Crunchiness:<input type="text" th:field="*{crunchiness}" />
+    <span th:if="${#fields.hasErrors('crunchiness')}"
+          th:errors="*{crunchiness}"></span><br />
+
+
+    Price:<input type="text" th:field="*{price}" />
+    <span th:if="${#fields.hasErrors('price')}"
+          th:errors="*{price}"></span><br />
+
+    <br />
+    <input type="submit" value="Submit"  />
+</form>
+</body>
+</html>>

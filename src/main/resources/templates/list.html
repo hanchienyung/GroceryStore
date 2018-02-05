@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Add a Grocery Store Name</a><br />
+<a href="/addcosm">Add a Cosmetic Item</a><br />
+<a href="/addclean">Add a Cleaning Item</a><br />
+<a href="/addsnack">Add a Snack</a><br />
+
+<h1> Grocery List </h1>
+
+<div th:each="grocerystore : ${grocerystores}">
+    <span th:text="${grocerystore.name}"></span><br />
+</div>
+
+<br />
+<h2>Cosmetics</h2>
+<div th:each="cosmetic : ${cosmetics}">
+    <b>item: </b><span th:text="${cosmetic.item}"></span><br />
+    <b>qty: </b><span th:text="${cosmetic.qty}">sample text</span><br />
+    <b>brand: </b><span th:text="${cosmetic.brand}"></span><br />
+    <b>price: </b><span th:text="${cosmetic.price}"></span><br />
+    <b>popularity :</b><span th:text="${cosmetic.popularity}"></span><br />
+    <br />
+</div>
+
+<br />
+<h2>Cleaning Items</h2>
+<div th:each ="cleaningitem : ${cleaningitems}">
+    <b>item </b> <span th:text="${cleaningitem.item}"></span><br />
+    <b>qty </b> <span th:text="${cleaningitem.qty}"></span><br />
+    <b>strength </b> <span th:text="${cleaningitem.strength}"></span><br />
+    <b>price </b> <span th:text="${cleaningitem.price}"></span><br />
+    <br />
+</div>
+
+<br />
+<h2>Snacks</h2>
+<div th:each="snack : ${snacks}">
+    <b>item </b> <span th:text="${snack.item}"></span><br />
+    <b>qty </b> <span th:text="${snack.qty}"></span><br />
+    <b>crunchiness </b> <span th:text="${snack.crunchiness}"></span><br />
+    <b>price </b> <span th:text="${snack.price}"></span><br />
+</div>
+
+<h2> Total Cosmetics Revenue</h2> <span th:text="${revenue_cosmetic}"></span><br />
+<h2> Total Cleaning Items Revenue</h2> <span th:text="${revenue_cleaningitem}"></span><br />
+<h2> Total Snacks Revenue</h2> <span th:text="${revenue_snack}"></span><br />
+<h2> Total Store Revenue</h2> <span th:text="${revenue_total}"></span><br />
+</body>
+</html>
