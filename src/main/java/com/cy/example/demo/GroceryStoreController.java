@@ -41,6 +41,12 @@ public class GroceryStoreController {
         model.addAttribute("cleaningitems", cleaningitemRepository.findAll());
         model.addAttribute("snacks", snackRepository.findAll());
 
+        //initialize sum variables
+        revenue_cosmetic = 0.0;
+        revenue_cleaningitem = 0.0;
+        revenue_snack = 0.0;
+        revenue_total = 0.0;
+
         for (Cosmetic cosmetic : cosmeticRepository.findAll())
         {
            revenue_cosmetic += cosmetic.getPrice() * cosmetic.getQty();
